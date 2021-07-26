@@ -14,6 +14,10 @@
       <%= form_for(:user, {url: signup_path, class: "contactForm row g-3"}) do |f| %>
         <h4 class="text-dark text-center">New user? Sign up!</h4>
         <div class="col-12">
+          <%= f.label :name, "Your name", {class: "text-dark"} %>
+          <%= f.text_field :name, class: "form-control", id: "name", placeholder: "Enter your name", required: true  %>
+        </div>
+        <div class="col-12">
           <%= f.label :email, "Your e-mail", {class: "text-dark"} %>
           <%= f.email_field :email, class: "form-control", id: "email", placeholder: "Enter your email", required: true  %>
         </div>
@@ -25,14 +29,14 @@
           <%= f.label :password, "Confirm password", {class: "text-dark"} %>
           <%= f.password_field :password_confirmation, class: "form-control", id: "password", placeholder: "", required: true  %>
         </div>
-        <div class="col-12 mt-2">
-          <%= check_box_tag("remember_me", "1", false, {class: "form-check-input"}) do %>
+        <div class="col-12 mt-4">
+          <%= button_tag(type: 'submit', class: "btn btn-dark float-end", id: 'validForm') do %>
+            <span>Sign up</span>
           <% end %>
-          <%= f.label "remember_me", "Remember me", {class: "form-check-label text-dark"} %>
         </div>
       <% end %>
       <hr class="mt-4">
-      <div class="col-12">
+      <div class="col-12 mt-4">
         <p class="text-center text-dark mb-0">Already have an account? <%= link_to "Login", login_path %></p>
       </div>
     </div>

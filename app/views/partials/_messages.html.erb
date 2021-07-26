@@ -1,0 +1,7 @@
+<% flash.each do |message_type, message| %>
+  <div class="messages" id="messages">
+    <div class="alert alert-<%= message_type %>" role="alert">
+      <%= "#{message_type}! #{message}" %>
+    </div>
+  </div>
+<% end %>
