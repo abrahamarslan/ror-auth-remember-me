@@ -11,14 +11,14 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
           <li>
-            <%= link_to "Profile", '#', class: "dropdown-item" %>
+            <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
           </li>
           <li>
             <%= link_to "Settings", '#', class: "dropdown-item" %>
           </li>
           <li><hr class="dropdown-divider"></li>
           <li>
-            <%= link_to "Logout", '#', class: "dropdown-item" %>
+            <%= link_to "Logout", logout_path, class: "dropdown-item" %>
           </li>
         </ul>
       <% else %>

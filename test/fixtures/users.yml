@@ -9,3 +9,8 @@ test:
   name: John Doe
   email: johndoe@test.com
   password_digest: <%= User.digest('password') %>
+
+valid:
+  name: Jane Doe
+  email: jane@test.com
+  password_digest: <%= User.digest('password') %>
