@@ -1,2 +1,8 @@
-<h1>Home#about</h1>
-<p>Find me in app/views/home/about.html.erb</p>
+<% provide(:title, "About") %>
+<% content_for :body do %>
+  <h1>About us</h1>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, molestias quas. Ad aperiam dolore laudantium quam quos sapiente unde ut?</p>
+  <p class="lead">
+    <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
+  </p>
+<% end %>

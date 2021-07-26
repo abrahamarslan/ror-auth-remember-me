@@ -1,0 +1,40 @@
+<% provide(:title, "Sign-up") %>
+<% content_for :custom_css do %>
+  <style type="text/css">
+      .form-container {
+          text-align: left !important;
+          text-shadow: none !important;
+      }
+  </style>
+<% end %>
+<% content_for :body do %>
+  <h1>Log in</h1>
+  <div class="row">
+    <div class="login-form bg-light mt-4 p-4 form-container">
+      <%= form_for(:user, {url: signup_path, class: "contactForm row g-3"}) do |f| %>
+        <h4 class="text-dark text-center">New user? Sign up!</h4>
+        <div class="col-12">
+          <%= f.label :email, "Your e-mail", {class: "text-dark"} %>
+          <%= f.email_field :email, class: "form-control", id: "email", placeholder: "Enter your email", required: true  %>
+        </div>
+        <div class="col-12 mt-2">
+          <%= f.label :password, "Your password", {class: "text-dark"} %>
+          <%= f.password_field :password, class: "form-control", id: "password", placeholder: "", required: true  %>
+        </div>
+        <div class="col-12 mt-2">
+          <%= f.label :password, "Confirm password", {class: "text-dark"} %>
+          <%= f.password_field :password_confirmation, class: "form-control", id: "password", placeholder: "", required: true  %>
+        </div>
+        <div class="col-12 mt-2">
+          <%= check_box_tag("remember_me", "1", false, {class: "form-check-input"}) do %>
+          <% end %>
+          <%= f.label "remember_me", "Remember me", {class: "form-check-label text-dark"} %>
+        </div>
+      <% end %>
+      <hr class="mt-4">
+      <div class="col-12">
+        <p class="text-center text-dark mb-0">Already have an account? <%= link_to "Login", login_path %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
