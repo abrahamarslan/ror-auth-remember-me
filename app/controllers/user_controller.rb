@@ -15,6 +15,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       #Handle successful update
+      flash[:success] = "Profile successfully updated."
       redirect_to @user
     else
       #Error message
