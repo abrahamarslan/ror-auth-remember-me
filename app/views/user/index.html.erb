@@ -1,0 +1,33 @@
+<% provide(:title, "Index of users") %>
+<% content_for :custom_css do %>
+  <style type="text/css">
+
+  </style>
+<% end %>
+<% content_for :body do %>
+  <h1>All users</h1>
+  <div class="container height-100 d-flex justify-content-center align-items-center">
+    <div class="card text-center">
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="" scope="col">#</th>
+          <th scope="col"></th>
+          <th scope="col">Name</th>
+          <th scope="col">E-mail</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <th scope="row"><%= user.id %></th>
+            <td><%= gravatar_for user %></td>
+            <td><%= link_to user.name, user_path(user) %></td>
+            <td><%= user.email %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
