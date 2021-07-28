@@ -5,7 +5,7 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
   def setup
-    @user = users(:test)
+    #@user = users(:test)
   end
 
   test "test the login with invalid information" do

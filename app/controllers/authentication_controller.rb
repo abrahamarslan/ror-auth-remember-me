@@ -8,7 +8,7 @@ class AuthenticationController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       #log the user in
       log_in user
-      redirect_to user
+      redirect_back_or user
     else
       #Error message
       flash[:danger] = "Invalid email/password combination."
